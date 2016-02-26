@@ -4,7 +4,6 @@ title: "Using NUnit with Visual Studio's Test Explorer"
 date: 2016-2-26
 ---
 
-# Using NUnit with Visual Studio's Test Explorer
 Currently there's a problem with the 3.0+ versions of NUnit using the NUnitTestAdapter where tests are not added to Visual Studio's test explorer on build. We can work around this by using NUnit 2.6.4 along with the NUnitTestAdapter 2.0 so that they are compatible with each other:
 
 1: Install NUnit with NUGET package manager
