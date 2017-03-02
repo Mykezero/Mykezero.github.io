@@ -124,5 +124,5 @@ public class FTPFileUploaderTestCase : FileUploaderAbstractTestCase
 ```
 
 Now, when a new SFTP file uploader is created, it will be a matter of
-subclassing from our abstract test case to ensure that the SFTP file uploader
+sub classing from our abstract test case to ensure that the SFTP file uploader
 upholds the contract for guarding against these invalid inputs.
