@@ -4,13 +4,13 @@ title: "Unit testing queries with Entity Framework"
 date: 2016-7-10
 ---
 
-When working with the entity framework, sometimes you'd just like to test the output of your linq to sql statements without invoking the database. 
+When working with the entity framework, sometimes you'd just like to test the output of your linq to sql statements without invoking the database.
 
-In the past, I've tried using fake, in-memory dbsets to test these queries but the resulting test doubles always felt clunky. 
+In the past, I've tried using fake, in-memory dbsets to test these queries but the resulting test doubles always felt clunky.
 
-You would end up creating a header interface for the DbContext which is a pain to maintain when you have many dbsets in one dbcontext. 
+You would end up creating a header interface for the DbContext which is a pain to maintain when you have many dbsets in one dbcontext.
 
-```
+```cs
 public class DatabaseContext : DbContext, IDatabaseContext
 {
 	DbSet<Customer> Customers { get; set; }
@@ -40,7 +40,7 @@ In this case, we should prefer query objects over repositories, limiting the num
 
 With that in mind we can more easily test these queries by using the .NET Framework's built in ienumerable classes without much hassle.
 
-```
+```cs
 public class CustomerQuery
 {
 	public string Name { get; set; }
@@ -57,9 +57,9 @@ public class CustomerQuery
 }
 ```
 
-With all that in place, we can now test the output of linq to sql expressions. 
+With all that in place, we can now test the output of linq to sql expressions.
 
-```
+```cs
 public class CustomerQueryTest
 {
 	[Fact]
@@ -84,9 +84,9 @@ public class CustomerQueryTest
 }
 ```
 
-Finally, you can use the new query by passing the dbset directly to the query object's execute method. 
+Finally, you can use the new query by passing the dbset directly to the query object's execute method.
 
-```
+```cs
 public ActionResult DisplayCustomers(string customerName)
 {
 	var model = new DisplayCustomersViewModel();
@@ -102,6 +102,6 @@ public ActionResult DisplayCustomers(string customerName)
 }
 ```
 
-This definitely makes testing the logic much simpler without having to stub the whole dbcontext. 
+This definitely makes testing the logic much simpler without having to stub the whole dbcontext.
 
-Sadly, this doesn't guarantee that your linq to sql statements will work correctly against a real database but this will definitely help with testing code containing linq to sql expressions. 
+Sadly, this doesn't guarantee that your linq to sql statements will work correctly against a real database but this will definitely help with testing code containing linq to sql expressions.
