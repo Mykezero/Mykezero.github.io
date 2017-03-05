@@ -11,10 +11,13 @@ tagline:          'Blog Posts'
 description:      'Random posts about random things!'
 url:              https://mykezero.github.io
 baseurl:          /
+rss:              atom.xml
 
 author:
-  name:           'Mykezero'
+  name:           Mykezero
   url:            https://github.com/Mykezero
+  email:          mikebartron@gmail.com
+
 
 paginate:         5
 

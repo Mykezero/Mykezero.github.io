@@ -4,7 +4,7 @@ title: "Unit Testing Naming Conventions"
 date: 2016-6-17
 ---
 
-When working with open source project, you run across a few different ways to name your unit tests. 
+When working with open source projects, you run across a few different ways to name your unit tests. 
 
 Let's take a look at a few of them by example testing a simple calculator with one operation: Divide
 
@@ -15,27 +15,26 @@ public class Calculator
 }
 ```
 
-
 # Test Naming Conventions
 
-## With - Will
+With/Will
 ```cs
 DivideWithDivisorEqualZeroWillThrowDivideByZeroException()
 ```
 
-## Given - Should
+Given/Should
 ```cs
 DivideGivenAZeroDivisorShouldThrowDivideByZeroException()
 ```
 
-## Given When Then
+Given/When/Then
 ```cs
 GivenAZeroDivisor_WhenDivideIsCalled_ThenDivideByZeroExceptionIsThrown.
 ```
 
 # Fixture naming conventions
 
-## Test class per method
+Test class per method
 ```cs
 public class CalculatorTests
 {
@@ -46,7 +45,7 @@ public class CalculatorTests
 }
 ```
 
-## When - Should fixture
+When - Should fixture
 ```cs
 public class WhenDividingByZero
 {

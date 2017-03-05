@@ -4,9 +4,11 @@ title: "Unit testing queries with Entity Framework"
 date: 2016-7-10
 ---
 
-EF is a pretty hard framework to unit test. In the past, I've tried using fake, in-memory dbsets to test my queries but they always felt so clunky.
+When working with the entity framework, sometimes you'd just like to test the output of your linq to sql statements without invoking the database. 
 
-You would end up creating a header interface for the DbContext which is just a pain when you have 26 dbsets in one DbContext ...
+In the past, I've tried using fake, in-memory dbsets to test these queries but the resulting test doubles always felt clunky. 
+
+You would end up creating a header interface for the DbContext which is a pain to maintain when you have many dbsets in one dbcontext. 
 
 ```
 public class DatabaseContext : DbContext, IDatabaseContext
@@ -34,9 +36,9 @@ public class TestWebContext : IDatabaseContext
 Instead, what I propose is following Jimmy's advice and to use queries instead. His article can be found here:
 https://lostechies.com/jimmybogard/2012/10/08/favor-query-objects-over-repositories/
 
-What I suggest is following his advice with regards to testing; preferring queries over repositories limiting the number of dbsets you have to mock for a single test.
+In this case, we should prefer query objects over repositories, limiting the number of entity framework related things you have to mock for a single test.
 
-With that in mind we can easily test EF and use .Net's built in IEnumerable classes without much hassle.
+With that in mind we can more easily test these queries by using the .NET Framework's built in ienumerable classes without much hassle.
 
 ```
 public class CustomerQuery
@@ -55,7 +57,7 @@ public class CustomerQuery
 }
 ```
 
-With all that in place, you can write a test for your new query using regular list data.
+With all that in place, we can now test the output of linq to sql expressions. 
 
 ```
 public class CustomerQueryTest
@@ -82,7 +84,7 @@ public class CustomerQueryTest
 }
 ```
 
-Finally, you can add this to your application with a data context like so
+Finally, you can use the new query by passing the dbset directly to the query object's execute method. 
 
 ```
 public ActionResult DisplayCustomers(string customerName)
@@ -100,7 +102,6 @@ public ActionResult DisplayCustomers(string customerName)
 }
 ```
 
-This definitely makes testing the logic much simpler with less setup needed than the TestDatabase setup.
+This definitely makes testing the logic much simpler without having to stub the whole dbcontext. 
 
-Of course, like others have said already, this doesn't guarantee that your LINQ to SQL statements will work correctly against a real database,
-but this is definitely a step forward for testing database intensive with lots of logic built into LINQ queries.
+Sadly, this doesn't guarantee that your linq to sql statements will work correctly against a real database but this will definitely help with testing code containing linq to sql expressions. 

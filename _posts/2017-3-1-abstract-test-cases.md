@@ -126,3 +126,13 @@ public class FTPFileUploaderTestCase : FileUploaderAbstractTestCase
 Now, when a new SFTP file uploader is created, it will be a matter of
 sub classing from our abstract test case to ensure that the SFTP file uploader
 upholds the contract for guarding against these invalid inputs.
+
+Of course, this approach doesn't only apply to gaurding against invalid inputs, 
+but could be use to verify the behavior of each file uploader as a whole. 
+
+New tests for "When upload is called, with given path and contents, will upload file" 
+could be added to ensure that each uploader performs some upload action with the path 
+and content information. 
+
+This would ensure each implementer properly implements the contract for that 
+particular abstraction. 
