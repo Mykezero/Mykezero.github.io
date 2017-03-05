@@ -1,4 +1,5 @@
-name: Hank Quinlan, Horrible Cop
+name: Mykezero
+description: Random Rambling of a Software Enthusiast
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
 highlighter: rouge
