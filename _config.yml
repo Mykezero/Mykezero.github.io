@@ -1,5 +1,25 @@
-name: Mykezero
-description: Random Rambling of a Software Enthusiast
-markdown: kramdown
-permalink: /blog/:year/:month/:day/:title
-highlighter: rouge
+# Dependencies
+markdown:         kramdown
+highlighter:      rouge
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Mykezero
+tagline:          'Ramblings of a Software Enthusiat'
+description:      'Random articles about random things that are of interest to me!'
+url:              https://mykezero.github.io
+baseurl:          /
+
+author:
+  name:           'Mykezero'
+  url:            https://github.com/Mykezero
+
+paginate:         5
+
+# Custom vars
+version:          1.0.0
+
+github:
+  repo:           https://mykezero.github.io

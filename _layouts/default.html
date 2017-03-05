@@ -1,28 +1,15 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>{{ page.title }}</title>
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
-		{% include google_analytics.html %}
-  	</head>
-	<body>
-		<nav>
-			<ul>
-				<li><a href="/">Home</a></li>
-				<li><a href="/blog">Blog</a></li>
-			</ul>
-		</nav>
-		<div class="container content">
+<html lang="en-us">
 
-	  		{{ content }}
-	  		{% include comments.html %}
+  {% include head.html %}
 
-		</div>
-  		<footer>
-   			<ul>
-   				<li><a href="mailto:mikebartron@gmail.com">email</a></li>
-   				<li><a href="https://github.com/Mykezero">github.com/mykezero</a></li>
-   			</ul>
-  		</footer>
-	</body>
+  <body>
+
+    {% include sidebar.html %}
+
+    <div class="content container">
+      {{ content }}
+    </div>
+
+  </body>
 </html>
