@@ -87,6 +87,7 @@ Surely, I haven't had the confidence to move forward this this approach in any a
 Indeed, this is still just a crazy theory, but maybe ...
 
 *Side note*
+
 Quick listing of possible reasons why this is a bad idea: 
 
 1. Duplication of logic where only one place is changed, but not the other (hard to predict bugs)
