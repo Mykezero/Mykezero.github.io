@@ -85,3 +85,11 @@ In addition, we no longer have to concern ourselves with what database implement
 Surely, I haven't had the confidence to move forward this this approach in any applications, but the benefits are pretty sound in theory. I don't think the database implementation would change all that often, but having the option to relentlessly refactor my database code just like my application code would be priceless.
 
 Indeed, this is still just a crazy theory, but maybe ...
+
+*Side note*
+Quick listing of possible reasons why this is a bad idea: 
+
+1. Duplication of logic where only one place is changed, but not the other (hard to predict bugs)
+2. Takes more effort to TDD the logic in the application and codify the same thing in SQL
+
+Both are symptoms of not keeping the code DRY enough. But when one lives in a swamp where things weren't too dry to begin with, then maybe this wouldn't be the worse of your worries. 
