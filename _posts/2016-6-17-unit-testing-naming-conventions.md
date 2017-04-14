@@ -4,6 +4,8 @@ title: "Unit Testing Naming Conventions"
 date: 2016-6-17
 ---
 
+# Test Naming Conventions
+
 When working with open source projects, you run across a few different ways to name your unit tests. 
 
 Let's take a look at a few of them by example testing a simple calculator with one operation: Divide
@@ -15,7 +17,7 @@ public class Calculator
 }
 ```
 
-# Test Naming Conventions
+## Test Method Naming Conventions
 
 With/Will
 ```cs
@@ -32,7 +34,7 @@ Given/When/Then
 GivenAZeroDivisor_WhenDivideIsCalled_ThenDivideByZeroExceptionIsThrown.
 ```
 
-# Fixture naming conventions
+## Fixture naming conventions
 
 Test class per method
 ```cs
