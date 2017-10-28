@@ -6,9 +6,8 @@ highlighter:      rouge
 permalink:        pretty
 
 # Setup
-title:            Mykezero
+title:            'Random posts!'
 tagline:          'Blog Posts'
-description:      'Random posts about random things!'
 url:              https://mykezero.github.io
 baseurl:          /
 rss:              atom.xml
