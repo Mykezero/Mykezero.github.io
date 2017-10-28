@@ -26,3 +26,6 @@ version:          1.0.0
 
 github:
   repo:           https://mykezero.github.io
+
+# Gems
+gems: [jekyll-paginate]
