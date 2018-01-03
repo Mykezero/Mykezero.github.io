@@ -16,22 +16,18 @@ At first, I attempted to block the blockadblock.js http get request, but the oth
 
 What we'll do instead is to load a timer that looks specifically for those div elements and will remove them from the page. 
 
-<details>
+## Code Snippet and Example
   
-  <summary>Code Snippet and Example</summary>
+### Javascript
   
-  ### Javascript
-  
-  ```js
-  // Create interval to repeatedly remove 'funimation-error-screen' every half second.
-  setInterval(function(){ $("funimation-error-screen").remove() }, 500);
-  ```
-  
-  ### CJS Settings
-  
-  ![image](https://user-images.githubusercontent.com/5349608/34525686-d3d83720-f06d-11e7-84cd-c66174bc7d8a.png)
-  
-</details>
+```js
+// Create interval to repeatedly remove 'funimation-error-screen' every half second.
+setInterval(function(){ $("funimation-error-screen").remove() }, 500);
+```
+
+### CJS Settings
+
+![image](https://user-images.githubusercontent.com/5349608/34525686-d3d83720-f06d-11e7-84cd-c66174bc7d8a.png)
 
 The plugin should load this javascript before the page loads and will eliminate the black overlay when they pop up. 
 
