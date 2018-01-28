@@ -34,3 +34,15 @@ The plugin should load this javascript before the page loads and will eliminate 
 Pretty simple solution for what was looking like a complex problem. 
 
 Hopefully this helps!
+
+**Edit: It appears that loading JQuery onto the page blocks the Pause button. 
+
+You can do the same with Vanilla javascript using the following code: 
+```
+// Create interval to repeatedly remove 'funimation-error-screen' every half second.
+var timer = window.setInterval(function(){
+  var elem = document.getElementById("funimation-error-screen");
+  if(elem === null) return;
+  elem.parentNode.removeChild(elem);
+},100);
+```
