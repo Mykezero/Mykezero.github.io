@@ -92,7 +92,7 @@ string FollowedPlayer
 Now, with notepad++ you can use the following regex and replace to create getters and setters for all of the fields: 
 
 * Pattern: `(.*) (.*) (.*)`
-* Replace: `public $1 $2 {\r\nget => Config.Instance.$2;\r\nset => Config.Instance.$2;\r\n}`
+* Replace: `public $1 $2 {\r\nget => Config.Instance.$2;\r\nset => Config.Instance.$2 = value;\r\n}`
 
 You'll end up with the following as a result. 
 
