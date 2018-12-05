@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Bitbucket - Setting up SSH key without using default id_rsa"
+title: "Setting up SSH key without using id_rsa for Bitbucket"
 date: 2018-12-5
 ---
 
@@ -16,7 +16,7 @@ This set up will allow you to use a custom ssh key specifically for Bitbucket, w
 
 3. Create ssh config file with the following settings for bitbucket.org
 
-    ##### FileName: ~.\ssh\config
+    **FileName: ~.\ssh\config**
   
     ```
     Host bitbucket.org
